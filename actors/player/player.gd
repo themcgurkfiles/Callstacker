@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var playerColorRect = $ColorRect
 @onready var playerCollider = $CollisionShape2D
 
+@export var Bullet : PackedScene
+
 # States for the player to undergo based on actions
 enum GameState { IDLE, MOVING, AIRMOVING }
 var current_state := GameState.IDLE
@@ -12,7 +14,7 @@ enum Actions { NONE, FIREPROJ, PARRY, JUMP }
 var LevelActions := [Actions.NONE]
 var last_used_action
 
-var original_color := Color.MIDNIGHT_BLUE
+var original_color : Color
 
 # Basic 2D character movement
 const SPEED = 350.0
@@ -27,12 +29,12 @@ func _init() -> void:
 	
 	# Sets starting player color
 	if playerColorRect:
-		playerColorRect.color = original_color
+		original_color = playerColorRect.color
 
 func _ready() -> void:
 	# Sets starting player color (primarily for start of game)
 	if playerColorRect:
-		playerColorRect.color = original_color
+		original_color = playerColorRect.color
 
 func jump_curve_grav(vel: Vector2):
 	if vel.y < 0:
@@ -69,7 +71,7 @@ func _physics_process(delta: float) -> void:
 		current_state = GameState.IDLE
 	
 	move_and_slide()
-	
+	playerColorRect.color = lerp(playerColorRect.color, original_color, 0.1)
 	# print(current_state)
 
 func process_action() -> void:
@@ -81,6 +83,10 @@ func process_action() -> void:
 		Actions.FIREPROJ:
 			print("FIREPROJ ACTION")
 			playerColorRect.color = Color.CRIMSON
+			var b = Bullet.instantiate()
+			b.currOwner = self
+			owner.add_child(b)
+			b.transform = $Muzzle.global_transform
 		Actions.PARRY:
 			print("PARRY ACTION")
 			playerColorRect.color = Color.GOLD

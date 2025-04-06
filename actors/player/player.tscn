@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dj2ajxk4i5m25"]
+[gd_scene load_steps=4 format=3 uid="uid://dj2ajxk4i5m25"]
 
 [ext_resource type="Script" uid="uid://dyo4trb8ynn4j" path="res://actors/player/player.gd" id="1_nvxhs"]
+[ext_resource type="PackedScene" uid="uid://b11wl1b6c4xqt" path="res://actors/bullet/bullet.tscn" id="2_ilk7j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cp522"]
 size = Vector2(26, 90)
 
 [node name="Player" type="CharacterBody2D" groups=["mob"]]
 script = ExtResource("1_nvxhs")
+Bullet = ExtResource("2_ilk7j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_cp522")
@@ -16,5 +18,8 @@ offset_left = -13.0
 offset_top = -45.0
 offset_right = 13.0
 offset_bottom = 45.0
-color = Color(0.862745, 0.0784314, 0.235294, 1)
+color = Color(0.098, 0.098, 0.439, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="Muzzle" type="Node2D" parent="."]
+position = Vector2(16, -34)
