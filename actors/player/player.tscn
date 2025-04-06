@@ -7,7 +7,7 @@
 size = Vector2(26, 90)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ilk7j"]
-radius = 64.0078
+radius = 110.014
 
 [node name="Player" type="CharacterBody2D" groups=["mob"]]
 script = ExtResource("1_nvxhs")
@@ -25,7 +25,7 @@ color = Color(0.098, 0.098, 0.439, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Muzzle" type="Node2D" parent="."]
-position = Vector2(25, -34)
+position = Vector2(56, -16)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2
@@ -33,8 +33,8 @@ wait_time = 0.2
 [node name="Area2D" type="Area2D" parent="." groups=["parry"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -2.645)
-scale = Vector2(0.785, 0.715)
+position = Vector2(0, -4)
+scale = Vector2(0.51, 0.385)
 shape = SubResource("CircleShape2D_ilk7j")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

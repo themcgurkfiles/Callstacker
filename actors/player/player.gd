@@ -27,6 +27,10 @@ var isParrying := false
 func _init() -> void:
 	# On level start: populate action list depending on level
 	LevelActions.clear() 
+	
+	LevelActions.append(Actions.FIREPROJ)
+	LevelActions.append(Actions.PARRY)
+	LevelActions.append(Actions.JUMP)
 	LevelActions.append(Actions.FIREPROJ)
 	LevelActions.append(Actions.PARRY)
 	LevelActions.append(Actions.JUMP)
