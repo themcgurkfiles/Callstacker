@@ -6,13 +6,31 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_uu6m2")]
-position = Vector2(204, 492)
+position = Vector2(204, 389)
 
 [node name="Floor" parent="." instance=ExtResource("2_hb8io")]
 position = Vector2(216, 602)
 
 [node name="Floor2" parent="." instance=ExtResource("2_hb8io")]
-position = Vector2(552, 538)
+position = Vector2(528, 603)
 
 [node name="Floor3" parent="." instance=ExtResource("2_hb8io")]
-position = Vector2(900, 457)
+position = Vector2(835, 560)
+
+[node name="Floor4" parent="." instance=ExtResource("2_hb8io")]
+position = Vector2(1138, 523)
+
+[node name="Floor8" parent="." instance=ExtResource("2_hb8io")]
+position = Vector2(1430, 488)
+
+[node name="Floor9" parent="." instance=ExtResource("2_hb8io")]
+position = Vector2(1702, 987)
+
+[node name="Floor5" parent="." instance=ExtResource("2_hb8io")]
+position = Vector2(1217, 996)
+
+[node name="Floor7" parent="." instance=ExtResource("2_hb8io")]
+position = Vector2(252, 900)
+
+[node name="Floor6" parent="." instance=ExtResource("2_hb8io")]
+position = Vector2(700, 1002)
