@@ -10,31 +10,31 @@
 position = Vector2(875, 385)
 
 [node name="Floor" parent="." instance=ExtResource("2_hb8io")]
-position = Vector2(216, 602)
+position = Vector2(156, 601)
 
 [node name="Floor2" parent="." instance=ExtResource("2_hb8io")]
-position = Vector2(528, 603)
+position = Vector2(469, 601)
 
 [node name="Floor3" parent="." instance=ExtResource("2_hb8io")]
-position = Vector2(835, 560)
+position = Vector2(782, 601)
 
 [node name="Floor4" parent="." instance=ExtResource("2_hb8io")]
-position = Vector2(1138, 523)
+position = Vector2(1095, 533)
 
 [node name="Floor8" parent="." instance=ExtResource("2_hb8io")]
-position = Vector2(1430, 488)
+position = Vector2(1408, 466)
 
 [node name="Floor9" parent="." instance=ExtResource("2_hb8io")]
-position = Vector2(1702, 987)
+position = Vector2(1604, 975)
 
 [node name="Floor5" parent="." instance=ExtResource("2_hb8io")]
-position = Vector2(1217, 996)
+position = Vector2(1193, 975)
 
 [node name="Floor7" parent="." instance=ExtResource("2_hb8io")]
 position = Vector2(252, 900)
 
 [node name="Floor6" parent="." instance=ExtResource("2_hb8io")]
-position = Vector2(700, 1002)
+position = Vector2(687, 1035)
 
 [node name="Bullet" parent="." instance=ExtResource("3_hb8io")]
 position = Vector2(117, 449)

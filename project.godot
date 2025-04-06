@@ -25,6 +25,7 @@ window/size/resizable=false
 [global_group]
 
 mob="Includes player and all enemies."
+parry="A parry area region."
 
 [input]
 

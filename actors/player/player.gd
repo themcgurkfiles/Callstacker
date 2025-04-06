@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
-@onready var playerColorRect = $ColorRect
-@onready var playerCollider = $CollisionShape2D
+@onready var playerColorRect := $ColorRect
+@onready var playerCollider := $CollisionShape2D
+@onready var parryRange := $Area2D
+@onready var parryTimer := $Timer
 
 @export var Bullet : PackedScene
 
@@ -19,6 +21,8 @@ var original_color : Color
 # Basic 2D character movement
 const SPEED = 350.0
 const JUMP_VELOCITY = -600.0
+
+var isParrying := false
 
 func _init() -> void:
 	# On level start: populate action list depending on level
@@ -71,8 +75,8 @@ func _physics_process(delta: float) -> void:
 		current_state = GameState.IDLE
 	
 	move_and_slide()
+	
 	playerColorRect.color = lerp(playerColorRect.color, original_color, 0.1)
-	# print(current_state)
 
 func process_action() -> void:
 	var actToDo = null
@@ -90,10 +94,18 @@ func process_action() -> void:
 		Actions.PARRY:
 			print("PARRY ACTION")
 			playerColorRect.color = Color.GOLD
+			isParrying = true
+			parryTimer.start()
 		Actions.JUMP:
 			print("JUMP ACTION")
+			playerColorRect.color = Color.GREEN
+			velocity.y = JUMP_VELOCITY / 2
 		_:
 			print("NO ACTIONS REMAINING")
+			playerColorRect.color = Color.WEB_GRAY
 			
 	if actToDo != null:
 		last_used_action = LevelActions.pop_front()
+
+func _on_timer_timeout() -> void:
+	isParrying = false
