@@ -34,8 +34,8 @@ func _ready() -> void:
 	if playerColorRect:
 		playerColorRect.color = original_color
 
-func jump_curve_grav(velocity: Vector2):
-	if velocity.y < 0:
+func jump_curve_grav(vel: Vector2):
+	if vel.y < 0:
 		return get_gravity()
 	return get_gravity() * 2
 

@@ -1,12 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://m5bafm0cmnno"]
+[gd_scene load_steps=4 format=3 uid="uid://m5bafm0cmnno"]
 
 [ext_resource type="PackedScene" uid="uid://dj2ajxk4i5m25" path="res://actors/player/player.tscn" id="1_uu6m2"]
 [ext_resource type="PackedScene" uid="uid://ctiog12fagpnm" path="res://levelpieces/floor.tscn" id="2_hb8io"]
+[ext_resource type="PackedScene" uid="uid://b11wl1b6c4xqt" path="res://actors/bullet/bullet.tscn" id="3_hb8io"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_uu6m2")]
-position = Vector2(204, 389)
+position = Vector2(875, 385)
 
 [node name="Floor" parent="." instance=ExtResource("2_hb8io")]
 position = Vector2(216, 602)
@@ -34,3 +35,6 @@ position = Vector2(252, 900)
 
 [node name="Floor6" parent="." instance=ExtResource("2_hb8io")]
 position = Vector2(700, 1002)
+
+[node name="Bullet" parent="." instance=ExtResource("3_hb8io")]
+position = Vector2(117, 449)

@@ -5,14 +5,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cp522"]
 size = Vector2(26, 90)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["mob"]]
 script = ExtResource("1_nvxhs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cp522")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -13.0
 offset_top = -45.0
 offset_right = 13.0
 offset_bottom = 45.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_cp522")
+color = Color(0.862745, 0.0784314, 0.235294, 1)
+metadata/_edit_use_anchors_ = true
