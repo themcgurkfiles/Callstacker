@@ -42,7 +42,7 @@ func _on_area_shape_exited(_area_rid: RID, area: Area2D, _area_shape_index: int,
 		set_process(false)
 
 func _process(_delta: float) -> void:
-	if currArea.owner:
+	if currArea:
 		if currArea.owner.isParrying == true and justParried != currArea and currArea != null:
 			speed = -(speed + (speed/6))
 			currOwner = currArea.owner

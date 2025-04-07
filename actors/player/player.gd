@@ -31,9 +31,9 @@ func _init() -> void:
 	LevelActions.append(Actions.FIREPROJ)
 	LevelActions.append(Actions.PARRY)
 	LevelActions.append(Actions.JUMP)
-	LevelActions.append(Actions.FIREPROJ)
-	LevelActions.append(Actions.PARRY)
-	LevelActions.append(Actions.JUMP)
+	#LevelActions.append(Actions.FIREPROJ)
+	#LevelActions.append(Actions.PARRY)
+	#LevelActions.append(Actions.JUMP)
 	
 	# Sets starting player color
 	if playerColorRect:

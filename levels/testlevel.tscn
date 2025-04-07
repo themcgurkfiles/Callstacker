@@ -22,10 +22,10 @@ position = Vector2(782, 601)
 position = Vector2(1095, 533)
 
 [node name="Floor10" parent="." instance=ExtResource("2_hb8io")]
-position = Vector2(156, 533)
+position = Vector2(156, 534)
 
 [node name="Floor11" parent="." instance=ExtResource("2_hb8io")]
-position = Vector2(156, 465)
+position = Vector2(156, 467)
 
 [node name="Floor8" parent="." instance=ExtResource("2_hb8io")]
 position = Vector2(1408, 466)
