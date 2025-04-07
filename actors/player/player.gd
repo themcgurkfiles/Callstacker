@@ -15,7 +15,7 @@ var current_state := GameState.IDLE
 enum Actions { NONE, FIREPROJ, PARRY, JUMP }
 var LevelActions := [Actions.NONE]
 var last_used_action
-
+var isActionLoop := false
 var original_color : Color
 
 # Basic 2D character movement
@@ -38,6 +38,9 @@ func _init() -> void:
 	# Sets starting player color
 	if playerColorRect:
 		original_color = playerColorRect.color
+	
+	# Optional: when enabled, actions go to the back of the queue instead of being destroyed
+	isActionLoop = true
 
 func _ready() -> void:
 	# Sets starting player color (primarily for start of game)
@@ -110,6 +113,8 @@ func process_action() -> void:
 			
 	if actToDo != null:
 		last_used_action = LevelActions.pop_front()
+		if isActionLoop:
+			LevelActions.append(last_used_action)
 
 func _on_timer_timeout() -> void:
 	isParrying = false

@@ -7,7 +7,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_uu6m2")]
-position = Vector2(139, 293)
+position = Vector2(378, 522)
 
 [node name="Floor" parent="." instance=ExtResource("2_hb8io")]
 position = Vector2(156, 601)
@@ -43,4 +43,4 @@ position = Vector2(252, 900)
 position = Vector2(687, 1035)
 
 [node name="Bullet" parent="." instance=ExtResource("3_hb8io")]
-position = Vector2(558, 519)
+position = Vector2(445, 506)
