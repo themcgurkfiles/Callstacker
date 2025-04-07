@@ -26,6 +26,7 @@ window/size/resizable=false
 
 mob="Includes player and all enemies."
 parry="A parry area region."
+bullet="A projectile fired from a source."
 
 [input]
 

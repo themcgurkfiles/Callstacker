@@ -13,7 +13,7 @@ func _physics_process(delta):
 	position += transform.x * speed * delta
 
 func _on_body_entered(body: Node2D) -> void:
-	# System 1: bullets always destroy each other
+	# System 1: Bullets always destroy all mobs
 	if body.is_in_group("mob"):
 		queue_free()
 		body.queue_free()
@@ -29,6 +29,12 @@ func _on_body_entered(body: Node2D) -> void:
 
 # Process function is only enabled when bullet is within a parry area
 func _on_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
+	# Bullets destroy each other on collide
+	if area.is_in_group("bullet"):
+		queue_free()
+		area.queue_free()
+	
+	# If true, retrieves parry area and enables process.
 	if area.owner and area.is_in_group("parry"):
 		currArea = area
 		set_process(true)
@@ -36,6 +42,7 @@ func _on_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int
 		speed = -speed
 
 func _on_area_shape_exited(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
+	# If true, exits parry area and disables process.
 	if area.owner and area.is_in_group("parry"):
 		currArea = null
 		justParried = null
@@ -44,6 +51,7 @@ func _on_area_shape_exited(_area_rid: RID, area: Area2D, _area_shape_index: int,
 func _process(_delta: float) -> void:
 	if currArea:
 		if currArea.owner.isParrying == true and justParried != currArea and currArea != null:
+			# When parried, increase speed and change owners
 			speed = -(speed + (speed/6))
 			currOwner = currArea.owner
 			justParried = currArea
